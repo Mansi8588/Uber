@@ -13,12 +13,20 @@ router.post('/register', [
     userController.registerUser
 )
 
-// router.post('/login', [
-//     body('email').isEmail().withMessage('Invalid Email'),
-//     body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long')
-// ],
-//     userController.loginUser
-// )
+/**
+ * @route POST /users/login
+ * @description Login a user with email and password
+ * @access Public
+ * @body {string} email - User's email
+ * @body {string} password - User's password
+ * @returns {object} - Auth token and user details
+ */
+router.post('/login', [
+    body('email').isEmail().withMessage('Invalid Email'),
+    body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long')
+],
+    userController.loginUser
+)
 
 // router.get('/profile', authMiddleware.authUser, userController.getUserProfile)
 
