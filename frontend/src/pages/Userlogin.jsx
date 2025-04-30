@@ -23,7 +23,7 @@ const UserLogin = () => {
 
     if (response.status === 200) {
       const data = response.data
-      // setUser(data.user)
+      setUser(data.user)
       localStorage.setItem('token', data.token)
       navigate('/home')
     }
@@ -36,7 +36,7 @@ const UserLogin = () => {
   return (
     <div className='p-7 h-screen flex flex-col justify-between'>
       <div>
-        <img className='w-16 mb-10' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYQy-OIkA6In0fTvVwZADPmFFibjmszu2A0g&s" alt="" />
+        <img className='w-16 mb-10' src="https://cdn.vectorstock.com/i/2000v/11/31/little-panda-cartoon-cute-face-baby-vector-40201131.avif" alt="" />
 
         <form onSubmit={(e) => {
           submitHandler(e)
@@ -66,7 +66,7 @@ const UserLogin = () => {
           />
 
           <button
-            className='bg-[#111] text-white font-semibold mb-3 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
+            className='bg-pink-500 text-white font-semibold mb-3 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
           >Login</button>
 
         </form>
@@ -75,7 +75,7 @@ const UserLogin = () => {
       <div>
         <Link
           to='/captain-login'
-          className='bg-[#10b461] flex items-center justify-center text-white font-semibold mb-5 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
+          className='bg-[#1075b4] flex items-center justify-center text-white font-semibold mb-5 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
         >Sign in as Captain</Link>
       </div>
     </div>

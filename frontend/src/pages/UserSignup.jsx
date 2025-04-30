@@ -52,7 +52,7 @@ const UserSignup = () => {
     <div>
       <div className='p-7 h-screen flex flex-col justify-between'>
         <div>
-          <img className='w-16 mb-10' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYQy-OIkA6In0fTvVwZADPmFFibjmszu2A0g&s" alt="" />
+          <img className='w-16 mb-10' src="https://cdn.vectorstock.com/i/2000v/11/31/little-panda-cartoon-cute-face-baby-vector-40201131.avif" alt="" />
 
           <form onSubmit={(e) => {
             submitHandler(e)
@@ -107,7 +107,7 @@ const UserSignup = () => {
             />
 
             <button
-              className='bg-[#111] text-white font-semibold mb-3 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
+              className='bg-pink-500 text-white font-semibold mb-3 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
             >Create account</button>
 
           </form>

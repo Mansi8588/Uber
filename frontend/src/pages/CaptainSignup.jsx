@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { CaptainDataContext } from '../context/CapatainContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { useEffect } from 'react'
 
 const CaptainSignup = () => {
 
@@ -61,7 +62,8 @@ const CaptainSignup = () => {
   return (
     <div className='py-5 px-5 h-screen flex flex-col justify-between'>
       <div>
-        <img className='w-20 mb-3' src="https://www.svgrepo.com/show/505031/uber-driver.svg" alt="" />
+      <img className='w-20 mb-3' src="https://cdn.vectorstock.com/i/2000v/11/31/little-panda-cartoon-cute-face-baby-vector-40201131.avif" alt="" />
+
 
         <form onSubmit={(e) => {
           submitHandler(e)
@@ -165,7 +167,7 @@ const CaptainSignup = () => {
           </div>
 
           <button
-            className='bg-[#111] text-white font-semibold mb-3 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
+            className='bg-pink-500 text-white font-semibold mb-3 rounded-lg px-4 py-2 w-full text-lg placeholder:text-base'
           >Create Captain Account</button>
 
         </form>
