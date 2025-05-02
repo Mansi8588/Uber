@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { CaptainDataContext } from '../context/CapatainContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { useEffect } from 'react'
 
 const CaptainSignup = () => {
 
