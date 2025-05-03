@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
-import axios from "axios";
 import gsap from "gsap";
-import { useContext } from "react";
-import { UserDataContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import LocationSearchPanel from "../components/LocationSearchPanel";
 import "remixicon/fonts/remixicon.css";
@@ -28,12 +25,7 @@ const Home = () => {
   const [ confirmRidePanel, setConfirmRidePanel ] = useState(false)
   const [ vehicleFound, setVehicleFound ] = useState(false)
   const [ waitingForDriver, setWaitingForDriver ] = useState(false)
-  const [ pickupSuggestions, setPickupSuggestions ] = useState([])
-  const [ destinationSuggestions, setDestinationSuggestions ] = useState([])
-  const [ activeField, setActiveField ] = useState(null)
-  const [ fare, setFare ] = useState({})
-  const [ vehicleType, setVehicleType ] = useState(null)
-  const [ ride, setRide ] = useState(null)
+
 
   const navigate = useNavigate()
 
@@ -47,7 +39,6 @@ const Home = () => {
         gsap.to(panelRef.current, {
           height: "70%",
           padding: 24,
-          // opacity:1
         });
         gsap.to(panelCloseRef.current, {
           opacity: 1,
@@ -56,7 +47,6 @@ const Home = () => {
         gsap.to(panelRef.current, {
           height: "0%",
           padding: 0,
-          // opacity:0
         });
         gsap.to(panelCloseRef.current, {
           opacity: 0,
@@ -134,7 +124,6 @@ useGSAP(function () {
       }}
        className="h-screen w-screen">
         {/* image for temporary use  */}
-        {/* <LiveTracking /> */}
       </div>
       <div className=" flex flex-col justify-end h-screen absolute top-0 w-full">
         <div className="h-[30%] p-6 bg-white relative">
@@ -160,10 +149,8 @@ useGSAP(function () {
             <input
               onClick={() => {
                 setPanelOpen(true);
-                // setActiveField('pickup')
               }}
               value={pickup}
-              // onChange={handlePickupChange}
               className="bg-[#eee] px-12 py-2 text-lg rounded-lg w-full"
               type="text"
               placeholder="Add a pick-up location"
@@ -171,20 +158,14 @@ useGSAP(function () {
             <input
               onClick={() => {
                 setPanelOpen(true);
-                // setActiveField('destination')
               }}
               value={destination}
-              // onChange={handleDestinationChange}
               className="bg-[#eee] px-12 py-2 text-lg rounded-lg w-full  mt-3"
               type="text"
               placeholder="Enter your destination"
             />
           </form>
-          {/* <button
-                        // onClick={findTrip}
-                        className='bg-black text-white px-4 py-2 rounded-lg mt-3 w-full'>
-                        Find Trip
-                    </button> */}
+        
         </div>
         <div ref={panelRef} className=" bg-white h-0">
 
@@ -193,12 +174,9 @@ useGSAP(function () {
 
 
           <LocationSearchPanel
-            // suggestions={activeField === 'pickup' ? pickupSuggestions : destinationSuggestions}
             setPanelOpen={setPanelOpen}
             setVehiclePanel={setVehiclePanel}
-            // setPickup={setPickup}
-            // setDestination={setDestination}
-            // activeField={activeField}
+           
           />
         </div>
       </div>
@@ -212,8 +190,7 @@ useGSAP(function () {
 
 
          <VehiclePanel
-                    // selectVehicle={setVehicleType}
-                    // fare={fare} 
+                   
                     setConfirmRidePanel={setConfirmRidePanel} 
                     setVehiclePanel={setVehiclePanel}
                      />
@@ -221,11 +198,7 @@ useGSAP(function () {
 
       <div ref={confirmRidePanelRef} className='fixed w-full z-10 bottom-0 translate-y-full bg-white px-3 py-6 pt-12'>
                 <ConfirmRide
-                    // createRide={createRide}
-                    // pickup={pickup}
-                    // destination={destination}
-                    // fare={fare}
-                    // vehicleType={vehicleType}
+                    
 
                     setConfirmRidePanel={setConfirmRidePanel}
                      setVehicleFound={setVehicleFound}
@@ -234,17 +207,12 @@ useGSAP(function () {
 
            <div ref={vehicleFoundRef} className='fixed w-full z-10 bottom-0 translate-y-full bg-white px-3 py-6 pt-12'>
                 <LookingForDriver
-                    // createRide={createRide}
-                    // pickup={pickup}
-                    // destination={destination}
-                    // fare={fare}
-                    // vehicleType={vehicleType}
+                   
                     setVehicleFound={setVehicleFound} />
             </div>
             <div ref={waitingForDriverRef} className='fixed w-full  z-10 bottom-0  bg-white px-3 py-6 pt-12'>
                 <WaitingForDriver
-                    // ride={ride}
-                    // setVehicleFound={setVehicleFound}
+                   
                     setWaitingForDriver={setWaitingForDriver}
                     waitingForDriver={waitingForDriver}
                      />
