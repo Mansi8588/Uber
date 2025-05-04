@@ -7,8 +7,11 @@ import { useEffect, useContext } from 'react'
 import axios from 'axios'
 import ConfirmRidePopUp from '../components/ConfirmRidePopUp.jsx'
 import RidePopUp from '../components/RidePopUp'
+import { CaptainDataContext } from '../context/CapatainContext'
 
 const CaptainHome = () => {
+
+
 
   const [ ridePopupPanel, setRidePopupPanel ] = useState(false)
     const [ confirmRidePopupPanel, setConfirmRidePopupPanel ] = useState(false)
